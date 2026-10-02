@@ -1,0 +1,22 @@
+spec_version: "0.1.0"
+name: "agent-orchestrator"
+version: "0.13.0"
+description: "Agent Orchestrator: Desktop workspace and daemon for planning, running, isolating, and supervising parallel coding agents."
+author: "Untrivial-ai & OpenGAP Contributors"
+license: "Apache-2.0"
+metadata:
+  domain: "Developer Tools / Multi-Agent Orchestration & Isolated Workspace Management"
+  category: "Developer Tools"
+  framework: "Agent Orchestrator Go Daemon, Electron TUI & Git Worktree Isolation"
+  language: "TypeScript, Go"
+skills:
+  - "worktree-isolated-agent-execution"
+  - "project-planning-delegation"
+  - "multi-agent-supervision-kanban"
+  - "cross-worker-context-sharing"
+tools:
+  - "worker-session-manager"
+  - "git-worktree-isolator"
+  - "kanban-task-orchestrator"
+  - "terminal-stream-attacher"
+  - "pr-ci-tracker"

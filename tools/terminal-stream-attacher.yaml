@@ -1,0 +1,26 @@
+name: "terminal-stream-attacher"
+description: "Streams real-time terminal stdout, stderr, and interactive PTY sessions from active workers."
+input_schema:
+  type: object
+  properties:
+    session_id:
+      type: string
+      description: "Identifier of the target worker session."
+    action:
+      type: string
+      enum:
+        - "attach"
+        - "read_recent"
+        - "send_input"
+        - "detach"
+      description: "Terminal PTY operation."
+    input_text:
+      type: string
+      description: "Optional text or keystrokes to transmit to the worker terminal."
+    tail_lines:
+      type: integer
+      description: "Number of recent lines to read."
+      default: 100
+  required:
+    - session_id
+    - action

@@ -1,0 +1,25 @@
+name: "pr-ci-tracker"
+description: "Monitors GitHub/GitLab pull requests, review comments, and CI/CD pipeline statuses attached to sessions."
+input_schema:
+  type: object
+  properties:
+    action:
+      type: string
+      enum:
+        - "create_pr"
+        - "get_ci_status"
+        - "fetch_reviews"
+        - "merge_pr"
+      description: "PR or CI tracking action."
+    branch_name:
+      type: string
+      description: "Worker task branch name."
+    pr_title:
+      type: string
+      description: "Title for new pull request (required for create_pr)."
+    pr_body:
+      type: string
+      description: "Markdown body for pull request description."
+  required:
+    - action
+    - branch_name

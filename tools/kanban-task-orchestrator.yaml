@@ -1,0 +1,33 @@
+name: "kanban-task-orchestrator"
+description: "Manages Kanban task columns, dependencies, worker assignments, and execution priority."
+input_schema:
+  type: object
+  properties:
+    action:
+      type: string
+      enum:
+        - "create_task"
+        - "move_task"
+        - "assign_worker"
+        - "get_board"
+      description: "Kanban board operation."
+    task_id:
+      type: string
+      description: "Unique task card identifier."
+    title:
+      type: string
+      description: "Short title summarizing the coding task."
+    column:
+      type: string
+      enum:
+        - "backlog"
+        - "in_progress"
+        - "in_review"
+        - "ci_running"
+        - "done"
+      description: "Target Kanban column."
+    assigned_session_id:
+      type: string
+      description: "Session identifier of the worker assigned to this task."
+  required:
+    - action

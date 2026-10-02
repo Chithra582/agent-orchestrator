@@ -1,0 +1,25 @@
+name: "git-worktree-isolator"
+description: "Provisions, syncs, cleans, and merges isolated Git worktrees and task branches."
+input_schema:
+  type: object
+  properties:
+    action:
+      type: string
+      enum:
+        - "create"
+        - "sync"
+        - "remove"
+        - "list"
+      description: "Git worktree management operation."
+    branch_name:
+      type: string
+      description: "Name of the dedicated task branch for the worktree."
+    base_commit:
+      type: string
+      description: "Base commit, branch, or tag to branch off from."
+      default: "main"
+    worktree_path:
+      type: string
+      description: "Target filesystem directory for the provisioned worktree."
+  required:
+    - action

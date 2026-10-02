@@ -1,0 +1,34 @@
+name: "worker-session-manager"
+description: "Spawns, monitors, pauses, attaches to, and terminates isolated coding agent worker sessions."
+input_schema:
+  type: object
+  properties:
+    action:
+      type: string
+      enum:
+        - "spawn"
+        - "pause"
+        - "resume"
+        - "terminate"
+        - "status"
+      description: "Worker session lifecycle action."
+    session_id:
+      type: string
+      description: "Unique worker session identifier (required for pause, resume, terminate, and status)."
+    agent_type:
+      type: string
+      enum:
+        - "claude_code"
+        - "cursor"
+        - "codex"
+        - "custom"
+      description: "Coding agent executable flavor to spawn."
+      default: "claude_code"
+    task_description:
+      type: string
+      description: "Instructional prompt and acceptance criteria for the worker."
+    worktree_path:
+      type: string
+      description: "Filesystem path of the isolated worktree assigned to this worker."
+  required:
+    - action
